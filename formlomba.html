@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lampiran Formulir Lomba SMA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #343a40;
+    }
+    .filter {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    select {
+      padding: 10px;
+      font-size: 16px;
+    }
+    .formulir-list {
+      margin-top: 20px;
+    }
+    .formulir-item {
+      padding: 15px;
+      background-color: #f1f3f5;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    .formulir-item h3 {
+      margin: 0 0 10px;
+      color: #212529;
+    }
+    .formulir-item a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .formulir-item a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+      }
+      .filter {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <script>
+    function filterLomba() {
+      const kategori = document.getElementById('kategori').value;
+      const items = document.querySelectorAll('.formulir-item');
+      items.forEach(item => {
+        if (kategori === 'semua' || item.dataset.kategori === kategori) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Lampiran Formulir Lomba SMA</h1>
+    <div class="filter">
+      <label for="kategori" style="margin-right: 10px;">Filter Kategori:</label>
+      <select id="kategori" onchange="filterLomba()">
+        <option value="semua">Semua</option>
+        <option value="bahasa">Bahasa</option>
+        <option value="sains">Sains</option>
+        <option value="ilmiah">Ilmiah</option>
+        <option value="poster">Poster</option>
+        <option value="musik">Musik</option>
+      </select>
+    </div>
+
+    <div class="formulir-list">
+      <div class="formulir-item" data-kategori="bahasa">
+        <h3>Formulir Pendaftaran Lomba Debat Bahasa Indonesia</h3>
+        <a href="/files/formulir-debat.pdf" download>Unduh Formulir (PDF)</a>
+      </div>
+      <div class="formulir-item" data-kategori="sains">
+        <h3>Formulir Pendaftaran Olimpiade Sains Tingkat SMA</h3>
+        <a href="/files/formulir-sains.pdf" download>Unduh Formulir (PDF)</a>
+      </div>
+      <div class="formulir-item" data-kategori="ilmiah">
+        <h3>Formulir Pendaftaran Lomba Karya Tulis Ilmiah</h3>
+        <a href="/files/formulir-karya-ilmiah.docx" download>Unduh Formulir (DOCX)</a>
+      </div>
+      <div class="formulir-item" data-kategori="poster">
+        <h3>Formulir Pendaftaran Lomba Poster Edukasi</h3>
+        <a href="/files/formulir-poster.pdf" download>Unduh Formulir (PDF)</a>
+      </div>
+      <div class="formulir-item" data-kategori="musik">
+        <h3>Formulir Pendaftaran Lomba Musik Antar SMA</h3>
+        <a href="/files/formulir-musik.docx" download>Unduh Formulir (DOCX)</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<h3>Download Formulir Lomba</h3>
+<ul>
+  <li><a href="https://raw.githubusercontent.com/devcraft555/form-lomba-sma/main/files/Formulir_Pendaftaran_Lomba_SMA.pdf" target="_blank">Download PDF</a></li>
+  <li><a href="https://raw.githubusercontent.com/devcraft555/form-lomba-sma/main/files/Formulir_Pendaftaran_Lomba_SMA.docx" target="_blank">Download DOCX</a></li>
+</ul>
+
